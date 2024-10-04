@@ -3,9 +3,6 @@ return {
 
     config = function ()
         toggleterm = require('toggleterm')
-
-        require('telescope').setup({})
-
-        local builtin = require('telescope.builtin')
+        -- maybe one day...?
     end
 }
