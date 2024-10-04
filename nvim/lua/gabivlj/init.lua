@@ -19,7 +19,6 @@ local ThePrimeagenGroup = augroup('ThePrimeagen', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
-
 function R(name)
     require("plenary.reload").reload_module(name)
 end
@@ -64,6 +63,44 @@ autocmd('LspAttach', {
     end
 })
 
+require("lsp-format").setup {}
+
+local on_attach = function(client, bufnr)
+    require("lsp-format").on_attach(client, bufnr)
+end
+
+require('Comment').setup ({
+    post_hook = function(ctx)
+        if ctx.ctype == 1 then
+            -- Only move the cursor in normal mode (not in visual mode)
+            -- Get the current line and cursor position
+            local cursor_pos = vim.api.nvim_win_get_cursor(0)
+            local line = vim.api.nvim_get_current_line()
+
+            -- Find the position of the first non-whitespace character after the comment leader
+            local comment_start = line:find('%S', 1)
+            if comment_start then
+                vim.api.nvim_win_set_cursor(0, {cursor_pos[1], comment_start+1})
+            end
+        end
+    end,
+})
+
+
+
+require("lspconfig").gopls.setup { on_attach = on_attach }
+require("lspconfig").rust_analyzer.setup { on_attach = on_attach }
+require("lspconfig").biome.setup { on_attach = on_attach }
+require("lspconfig").tsserver.setup { on_attach = on_attach }
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- I am so sorry, but i need this.
+vim.api.nvim_set_keymap('i', '<A-BS>', '<C-w>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
+
