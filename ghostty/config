@@ -11,3 +11,5 @@ macos-option-as-alt = true
 keybind = alt+left=esc:b
 keybind = alt+right=esc:f
 copy-on-select = clipboard
+keybind = ctrl+left_bracket=goto_split:left
+keybind = ctrl+right_bracket=goto_split:right
