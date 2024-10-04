@@ -21,4 +21,5 @@ tricks:
 1.  `gd` is go to definition
 1.  `\vrr` view references
 1.  `\vrn` rename
-1. gcc means comment the selected block
+1.  quickfix list can be closed with `:ccl`
+1.  gcc means comment the selected block
