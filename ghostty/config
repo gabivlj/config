@@ -1,0 +1,13 @@
+background-blur-radius = 23
+background-opacity = 0.85247
+cursor-color = #bb9af7
+font-family = VictorMono NF
+font-size = 17
+macos-titlebar-style = transparent
+theme = tokyonight
+shell-integration-features = "no-cursor, sudo"
+macos-option-as-alt = true
+
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+copy-on-select = clipboard
