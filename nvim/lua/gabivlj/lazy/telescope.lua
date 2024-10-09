@@ -18,6 +18,8 @@ return {
         vim.keymap.set('n', '<C-p>', builtin.git_files, {})
         vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>git', builtin.git_status, {})
+        vim.keymap.set('n', '<C-tab>', builtin.oldfiles, {})
+
 
         vim.keymap.set('n', '<leader>pws', function()
             local word = vim.fn.expand("<cword>")
