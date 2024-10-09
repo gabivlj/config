@@ -155,3 +155,12 @@ vim.api.nvim_set_keymap("i", "<A-BS>", "<C-w>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("v", "<Tab>", ">gv", { noremap = true, silent = true })
+
+autocmd("FileType", {
+	pattern = "typescript",
+	callback = function()
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 2
+		vim.opt_local.expandtab = true
+	end,
+})

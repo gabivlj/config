@@ -12,6 +12,7 @@
   "copilot.vim": { "branch": "release", "commit": "22fd9542e3c47552abab5e685fefd760e4f405b2" },
   "editorconfig.nvim": { "branch": "master", "commit": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf" },
   "fidget.nvim": { "branch": "main", "commit": "1d1042d418ee8cb70d68f1e38db639844331c093" },
+  "formatter.nvim": { "branch": "master", "commit": "b0edd69cec589bb65930cb15ab58b7e61d9a7e70" },
   "friendly-snippets": { "branch": "main", "commit": "b8fae73a479ae0a1c54f5c98fa687ae8a0addc53" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "hererocks": { "branch": "master", "commit": "8bd2fcfdd65cfa7535ce39ea372a63b0bdb8e528" },
